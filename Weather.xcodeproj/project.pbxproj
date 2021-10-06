@@ -14,6 +14,11 @@
 		7D2F1017270E03490032B306 /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F1016270E03490032B306 /* WeatherTests.swift */; };
 		7D2F1021270E03490032B306 /* WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F1020270E03490032B306 /* WeatherUITests.swift */; };
 		7D2F1023270E03490032B306 /* WeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F1022270E03490032B306 /* WeatherUITestsLaunchTests.swift */; };
+		7D2F1030270E03F20032B306 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F102F270E03F20032B306 /* Weather.swift */; };
+		7D2F1032270E06AF0032B306 /* ForecastWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F1031270E06AF0032B306 /* ForecastWeather.swift */; };
+		7D2F1034270E06D60032B306 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F1033270E06D60032B306 /* WeatherService.swift */; };
+		7D2F1036270E081B0032B306 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7D2F1035270E081B0032B306 /* Config.xcconfig */; };
+		7D2F1039270E0A6F0032B306 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F1038270E0A6F0032B306 /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,12 @@
 		7D2F101C270E03490032B306 /* WeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D2F1020270E03490032B306 /* WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITests.swift; sourceTree = "<group>"; };
 		7D2F1022270E03490032B306 /* WeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7D2F102F270E03F20032B306 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		7D2F1031270E06AF0032B306 /* ForecastWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastWeather.swift; sourceTree = "<group>"; };
+		7D2F1033270E06D60032B306 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		7D2F1035270E081B0032B306 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		7D2F1037270E0A270032B306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7D2F1038270E0A6F0032B306 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +105,16 @@
 		7D2F1004270E03460032B306 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				7D2F1037270E0A270032B306 /* Info.plist */,
+				7D2F1038270E0A6F0032B306 /* Configuration.swift */,
 				7D2F1005270E03460032B306 /* WeatherApp.swift */,
 				7D2F1007270E03460032B306 /* ContentView.swift */,
 				7D2F1009270E03490032B306 /* Assets.xcassets */,
 				7D2F100B270E03490032B306 /* Preview Content */,
+				7D2F102F270E03F20032B306 /* Weather.swift */,
+				7D2F1031270E06AF0032B306 /* ForecastWeather.swift */,
+				7D2F1033270E06D60032B306 /* WeatherService.swift */,
+				7D2F1035270E081B0032B306 /* Config.xcconfig */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -232,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D2F100D270E03490032B306 /* Preview Assets.xcassets in Resources */,
+				7D2F1036270E081B0032B306 /* Config.xcconfig in Resources */,
 				7D2F100A270E03490032B306 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,8 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D2F1039270E0A6F0032B306 /* Configuration.swift in Sources */,
+				7D2F1034270E06D60032B306 /* WeatherService.swift in Sources */,
 				7D2F1008270E03460032B306 /* ContentView.swift in Sources */,
+				7D2F1030270E03F20032B306 /* Weather.swift in Sources */,
 				7D2F1006270E03460032B306 /* WeatherApp.swift in Sources */,
+				7D2F1032270E06AF0032B306 /* ForecastWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +319,7 @@
 /* Begin XCBuildConfiguration section */
 		7D2F1024270E03490032B306 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D2F1035270E081B0032B306 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -422,6 +445,7 @@
 				DEVELOPMENT_TEAM = ZMMPAGSL2B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Weather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -452,6 +476,7 @@
 				DEVELOPMENT_TEAM = ZMMPAGSL2B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Weather/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

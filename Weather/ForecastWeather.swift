@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct ForecastWeather: Decodable {
+    let list: [Weather]
+}
