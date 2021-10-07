@@ -36,5 +36,12 @@ struct Weather: Decodable, Identifiable {
         temperature = try main.decode(Double.self, forKey: .temperature)
     }
     
+    init(time: Date, summary: String, icon: String, temperature: Double) {
+        self.time = time
+        self.summary = summary
+        self.icon = icon
+        self.temperature = temperature
+    }
+    
     
 }

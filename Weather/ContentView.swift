@@ -8,9 +8,34 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var weatherService = WeatherService()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text(weatherService.errorMessage)
+                .font(.largeTitle)
+                .padding()
+            if weatherService.current != nil {
+                VStack {
+                    CurrentWeather(current: weatherService.current!)
+                    List {
+                        ForEach(weatherService.forecast) {
+                            WeatherRow(weather: $0)
+                        }
+                    }
+                }
+            } else {
+                Button {
+                    weatherService.load(latitude: 51.5074, longitude: 0.1278)
+                } label: {
+                    Text("Refresh Weather")
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 16)
+                        .background(Color.green)
+                        .cornerRadius(5)
+                }
+            }
+        }
     }
 }
 

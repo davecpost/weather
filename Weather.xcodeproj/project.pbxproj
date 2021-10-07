@@ -19,6 +19,8 @@
 		7D2F1034270E06D60032B306 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F1033270E06D60032B306 /* WeatherService.swift */; };
 		7D2F1036270E081B0032B306 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7D2F1035270E081B0032B306 /* Config.xcconfig */; };
 		7D2F1039270E0A6F0032B306 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F1038270E0A6F0032B306 /* Configuration.swift */; };
+		7D2F103F270E1B6F0032B306 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F103E270E1B6F0032B306 /* CurrentWeather.swift */; };
+		7D2F1041270E1B810032B306 /* WeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F1040270E1B810032B306 /* WeatherRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		7D2F1035270E081B0032B306 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		7D2F1037270E0A270032B306 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7D2F1038270E0A6F0032B306 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		7D2F103E270E1B6F0032B306 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		7D2F1040270E1B810032B306 /* WeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				7D2F1031270E06AF0032B306 /* ForecastWeather.swift */,
 				7D2F1033270E06D60032B306 /* WeatherService.swift */,
 				7D2F1035270E081B0032B306 /* Config.xcconfig */,
+				7D2F103E270E1B6F0032B306 /* CurrentWeather.swift */,
+				7D2F1040270E1B810032B306 /* WeatherRow.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -278,6 +284,8 @@
 				7D2F1039270E0A6F0032B306 /* Configuration.swift in Sources */,
 				7D2F1034270E06D60032B306 /* WeatherService.swift in Sources */,
 				7D2F1008270E03460032B306 /* ContentView.swift in Sources */,
+				7D2F1041270E1B810032B306 /* WeatherRow.swift in Sources */,
+				7D2F103F270E1B6F0032B306 /* CurrentWeather.swift in Sources */,
 				7D2F1030270E03F20032B306 /* Weather.swift in Sources */,
 				7D2F1006270E03460032B306 /* WeatherApp.swift in Sources */,
 				7D2F1032270E06AF0032B306 /* ForecastWeather.swift in Sources */,
