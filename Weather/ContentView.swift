@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct ContentView: View {
     @ObservedObject var weatherService = WeatherService()
+    @ObservedObject var locationManager = LocationManager()
     var body: some View {
         VStack {
             Text(weatherService.errorMessage)
@@ -16,25 +18,37 @@ struct ContentView: View {
                 .padding()
             if weatherService.current != nil {
                 VStack {
+                    if locationManager.city != nil && locationManager.country != nil {
+                        Text(locationManager.city!).font(.largeTitle) + Text(", ").font(.title) + Text(locationManager.country!).font(.title)
+                    }
                     CurrentWeather(current: weatherService.current!)
                     List {
                         ForEach(weatherService.forecast) {
                             WeatherRow(weather: $0)
                         }
+                    }.refreshable() {
+                        weatherService.load(location: locationManager.location)
                     }
                 }
             } else {
-                Button {
-                    weatherService.load(latitude: 51.5074, longitude: 0.1278)
-                } label: {
-                    Text("Refresh Weather")
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 24)
-                        .padding(.vertical, 16)
-                        .background(Color.green)
-                        .cornerRadius(5)
-                }
+                Image(systemName: "thermometer.sun.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .padding()
+                Text("Loading Weather")
+                    .font(.largeTitle)
+                    .padding()
             }
+        }.onReceive(locationManager.$location, perform: load)
+    }
+    
+    func load(location: CLLocation?) {
+        guard let location = location else {
+            return
+        }
+
+        if weatherService.current == nil {
+            weatherService.load(location: location)
         }
     }
 }

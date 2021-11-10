@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import CoreLocation
 
 class WeatherService: ObservableObject {
     @Published var errorMessage: String = ""
@@ -23,6 +24,16 @@ class WeatherService: ObservableObject {
         return value
     }
     private var cancellableSet: Set<AnyCancellable> = []
+    
+    func load(location: CLLocation?) {
+        guard let location = location else {
+            return
+        }
+
+        let lat = location.coordinate.latitude
+        let long = location.coordinate.longitude
+        load(latitude: Float(lat), longitude: Float(long))
+    }
     
     func load(latitude: Float, longitude: Float) {
         let decoder = JSONDecoder()
