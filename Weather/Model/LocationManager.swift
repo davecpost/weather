@@ -14,8 +14,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
     @Published var locationStatus: CLAuthorizationStatus?
     @Published var location: CLLocation?
-    @Published var city: String?
-    @Published var country: String?
     
     override init() {
         super.init()
@@ -34,14 +32,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             return
         }
         self.location = location
-        location.fetchCityAndCountry() { city, country, error in
-            if let error = error {
-                print(error)
-                return
-            }
-            self.city = city
-            self.country = country
-        }
+        
     }
 }
 

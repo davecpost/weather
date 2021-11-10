@@ -18,17 +18,16 @@ struct ContentView: View {
                 .padding()
             if weatherService.current != nil {
                 VStack {
-                    if locationManager.city != nil && locationManager.country != nil {
-                        Text(locationManager.city!).font(.largeTitle) + Text(", ").font(.title) + Text(locationManager.country!).font(.title)
+                    if weatherService.city != nil && weatherService.country != nil {
+                        Text(weatherService.city!).font(.largeTitle) + Text(", ").font(.title) + Text(weatherService.country!).font(.title)
                     }
                     CurrentWeather(current: weatherService.current!)
-                    List {
+                    ScrollView {
+                        PullToRefresh(coordinateSpaceName: "forecastList", onRefresh: refresh)
                         ForEach(weatherService.forecast) {
                             WeatherRow(weather: $0)
                         }
-                    }.refreshable() {
-                        weatherService.load(location: locationManager.location)
-                    }
+                    }.coordinateSpace(name: "forecastList")
                 }
             } else {
                 Image(systemName: "thermometer.sun.fill")
@@ -50,6 +49,10 @@ struct ContentView: View {
         if weatherService.current == nil {
             weatherService.load(location: location)
         }
+    }
+    
+    func refresh() {
+        weatherService.load(location: locationManager.location)
     }
 }
 

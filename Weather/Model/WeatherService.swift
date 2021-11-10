@@ -13,6 +13,9 @@ class WeatherService: ObservableObject {
     @Published var errorMessage: String = ""
     @Published var current: Weather?
     @Published var forecast: [Weather] = []
+    @Published var location: CLLocation?
+    @Published var city: String?
+    @Published var country: String?
     
     private var apiKey: String {
         var value: String
@@ -29,13 +32,23 @@ class WeatherService: ObservableObject {
         guard let location = location else {
             return
         }
+        self.location = location
+        
+        location.fetchCityAndCountry() { city, country, error in
+            if let error = error {
+                print(error)
+                return
+            }
+            self.city = city
+            self.country = country
+        }
 
         let lat = location.coordinate.latitude
         let long = location.coordinate.longitude
         load(latitude: Float(lat), longitude: Float(long))
     }
     
-    func load(latitude: Float, longitude: Float) {
+    private func load(latitude: Float, longitude: Float) {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
         let currentURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=metric")!
