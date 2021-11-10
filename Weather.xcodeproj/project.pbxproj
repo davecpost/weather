@@ -21,6 +21,7 @@
 		7D2F1039270E0A6F0032B306 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F1038270E0A6F0032B306 /* Configuration.swift */; };
 		7D2F103F270E1B6F0032B306 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F103E270E1B6F0032B306 /* CurrentWeather.swift */; };
 		7D2F1041270E1B810032B306 /* WeatherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F1040270E1B810032B306 /* WeatherRow.swift */; };
+		7DD6890E273C4D9A000739A3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD6890D273C4D9A000739A3 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		7D2F1038270E0A6F0032B306 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		7D2F103E270E1B6F0032B306 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		7D2F1040270E1B810032B306 /* WeatherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRow.swift; sourceTree = "<group>"; };
+		7DD6890D273C4D9A000739A3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,18 +111,15 @@
 		7D2F1004270E03460032B306 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				7DD6890F273C4E02000739A3 /* View */,
+				7DD6890C273C4D3C000739A3 /* Model */,
 				7D2F1037270E0A270032B306 /* Info.plist */,
 				7D2F1038270E0A6F0032B306 /* Configuration.swift */,
 				7D2F1005270E03460032B306 /* WeatherApp.swift */,
 				7D2F1007270E03460032B306 /* ContentView.swift */,
 				7D2F1009270E03490032B306 /* Assets.xcassets */,
 				7D2F100B270E03490032B306 /* Preview Content */,
-				7D2F102F270E03F20032B306 /* Weather.swift */,
-				7D2F1031270E06AF0032B306 /* ForecastWeather.swift */,
-				7D2F1033270E06D60032B306 /* WeatherService.swift */,
 				7D2F1035270E081B0032B306 /* Config.xcconfig */,
-				7D2F103E270E1B6F0032B306 /* CurrentWeather.swift */,
-				7D2F1040270E1B810032B306 /* WeatherRow.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -148,6 +147,26 @@
 				7D2F1022270E03490032B306 /* WeatherUITestsLaunchTests.swift */,
 			);
 			path = WeatherUITests;
+			sourceTree = "<group>";
+		};
+		7DD6890C273C4D3C000739A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7D2F1033270E06D60032B306 /* WeatherService.swift */,
+				7D2F1031270E06AF0032B306 /* ForecastWeather.swift */,
+				7D2F102F270E03F20032B306 /* Weather.swift */,
+				7DD6890D273C4D9A000739A3 /* LocationManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7DD6890F273C4E02000739A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D2F103E270E1B6F0032B306 /* CurrentWeather.swift */,
+				7D2F1040270E1B810032B306 /* WeatherRow.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +308,7 @@
 				7D2F1030270E03F20032B306 /* Weather.swift in Sources */,
 				7D2F1006270E03460032B306 /* WeatherApp.swift in Sources */,
 				7D2F1032270E06AF0032B306 /* ForecastWeather.swift in Sources */,
+				7DD6890E273C4D9A000739A3 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +474,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Update Location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -485,6 +506,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Update Location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
